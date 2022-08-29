@@ -241,6 +241,23 @@ body {
 .cardBox .card:hover .iconBox{
     color: var(--white);
 }
+.graphBox{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 30px;
+    min-height: 200px;
+}
+.graphBox .box{
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+}
 .details{
     position: relative;
     width: 100%;
@@ -392,6 +409,11 @@ body {
     color: var(--white);
 }
 @media(max-width: 991px){
+    .graphBox{
+        grid-template-columns: 1fr;
+        height: auto;
+        width: 100%;
+    }
     .navigation{
         left: -300px;
     }
@@ -411,6 +433,11 @@ body {
     }
 }
 @media(max-width: 768px){
+    .graphBox{
+        grid-template-columns: 1fr;
+        height: auto;
+        width: 100%;
+    }
     .details{
         grid-template-columns: repeat(1,1fr);
     }
@@ -419,6 +446,11 @@ body {
     }
 }
 @media(max-width: 480px){
+    .graphBox{
+        grid-template-columns: 1fr;
+        height: auto;
+        width: 100%;
+    }
     .cardBox{
         grid-template-columns: repeat(1,1fr);
     }
