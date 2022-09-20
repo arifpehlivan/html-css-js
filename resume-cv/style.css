@@ -227,3 +227,6 @@ p{
     background: #3590d2;
     border-radius: 10px;
 }
+.rightSide .about p{
+    margin-top: 15px;
+}
