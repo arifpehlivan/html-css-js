@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flying Text</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium exercitationem corrupti dolor sunt. Pariatur harum ea esse, beatae magnam consequatur eveniet sed perferendis commodi accusamus voluptatum quaerat, eaque cum reprehenderit similique in nihil fugiat soluta ducimus aspernatur, tempore labore. Veniam culpa fugiat non inventore! Porro, dolore possimus! Mollitia unde eaque iure esse dolor vero aperiam iusto molestiae aliquam doloremque, doloribus laborum animi autem temporibus distinctio in, sed aspernatur itaque quaerat quia. Quam hic culpa atque voluptas minima nemo optio adipisci corporis, omnis voluptates cum quas neque aut magnam. Mollitia consectetur dolorum quas vitae porro labore excepturi hic voluptatibus deleniti commodi.</p>
+    </section>
+    <script src="anime.min.js"></script>
+    <script>
+        const text = document.querySelector(".text");
+        text.innerHTML = text.textContent.replace(/\S/g,"<span>$&</span>");
+        const animation = anime.timeline({
+            targets: ".text span",
+            easing: "easeInOutExpo",
+            loop: true
+        });
+        animation
+            .add({
+                rotate: function(){
+                    return anime.random(-360,360)
+                },
+                translateX: function(){
+                    return anime.random(-500,500)
+                },
+                translateY: function(){
+                    return anime.random(-500,500)
+                },
+                duration: 5000,
+                delay: anime.stagger(20),
+            })
+            .add({
+                rotate: 0,
+                translateX: 0,
+                translateY: 0,
+                duration: 5000,
+                delay: anime.stagger(20),
+            })
+    </script>
+</body>
+</html>
